@@ -1,4 +1,4 @@
-function [sys,x0,str,ts]=han_eso(t,x,u,flag,a2,d,bet,b,T)
+function [sys,x0,str,ts]=han_eso(t,x,u,flag,d,bet,b,T)
 switch flag,
 case 0, [sys,x0,str,ts] = mdlInitializeSizes;
 case 2, sys = mdlUpdates(x,u,d,bet,b,T);
