@@ -25,4 +25,4 @@ x(2)+T*(x(3)-bet(2)*fal(e,0.5,d)+b*u(1));
 x(3)-T*bet(3)*fal(e,0.25,d)];
 % subfunction fal
 function f=fal(e,a,d)
-if abs(e)<d, f=e*d^(a-1); else, f=(abs(e))^a*sign(e); end
+if abs(e)<d, f=e*d^(a-1); else, f=((abs(e))^a)*sign(e); end
