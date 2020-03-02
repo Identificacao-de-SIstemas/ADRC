@@ -15,7 +15,9 @@ sys = simsizes(sizes); x0 = []; str = []; ts = [-1 0];
 % output computation
 function sys = mdlOutputs(t,x,u,aa,bet1,b,d)
 e1=u(1)-u(3); e2=u(2)-u(4);
-u0=bet1(1)*fal(e1,aa(1),d)+bet1(2)*fal(e2,aa(2),d); sys=u0-u(5)/b;
+u0=bet1(1)*fal(e1,aa(1),d)+bet1(2)*fal(e2,aa(2),d); 
+sys=u0-u(5)/b;
 % common function
 function f=fal(e,a,d)
+%disp(e)
 if abs(e)<d, f=e*d^(a-1); else, f=((abs(e))^a)*sign(e); end

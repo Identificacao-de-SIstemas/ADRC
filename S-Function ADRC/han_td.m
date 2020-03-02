@@ -26,4 +26,5 @@ delta=r*h; delta0=delta*h; y0=x(1)-u+h*x(2);
 a0=sqrt(delta*delta+8*r*abs(y0));
 if abs(y0)<=delta0, a=x(2)+y0/h;
 else, a=x(2)+0.5*(a0-delta)*sign(y0); end
-if abs(a)<=delta, f= -r*a/delta; else, f= -r*sign(a); end
+if abs(a)<=delta, f= -r*a/delta; else, f= -r*sign(a);
+end

@@ -1,3 +1,4 @@
+
 function [sys,x0,str,ts]=han_eso(t,x,u,flag,d,bet,b,T)
 switch flag,
 case 0, [sys,x0,str,ts] = mdlInitializeSizes;
@@ -19,10 +20,12 @@ sys = simsizes(sizes);
 x0 = [0; 0; 0]; str = []; ts = [-1 0];          % others
 % updates the discrete-time states
 function sys = mdlUpdates(x,u,d,bet,b,T)
+disp(u(2))
 e=x(1)-u(2);
 sys=[x(1)+T*(x(2)-bet(1)*e);
 x(2)+T*(x(3)-bet(2)*fal(e,0.5,d)+b*u(1));
 x(3)-T*bet(3)*fal(e,0.25,d)];
 % subfunction fal
 function f=fal(e,a,d)
+%disp(e)
 if abs(e)<d, f=e*d^(a-1); else, f=((abs(e))^a)*sign(e); end
